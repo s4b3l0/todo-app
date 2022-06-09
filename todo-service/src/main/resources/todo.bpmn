@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0kmguw6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <bpmn:process id="Process_10c93ed" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0japyd7</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_114azx4">
+      <bpmn:incoming>Flow_1n00489</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0japyd7" sourceRef="StartEvent_1" targetRef="Activity_1vhhtee" />
+    <bpmn:sequenceFlow id="Flow_1n00489" sourceRef="Activity_1vhhtee" targetRef="Event_114azx4" />
+    <bpmn:serviceTask id="Activity_1vhhtee" name="Process Todo Item" camunda:class="com.todo.app.ProcessTodoDelegate">
+      <bpmn:extensionElements />
+      <bpmn:incoming>Flow_0japyd7</bpmn:incoming>
+      <bpmn:outgoing>Flow_1n00489</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_10c93ed">
+      <bpmndi:BPMNEdge id="Flow_0japyd7_di" bpmnElement="Flow_0japyd7">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="310" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1n00489_di" bpmnElement="Flow_1n00489">
+        <di:waypoint x="410" y="117" />
+        <di:waypoint x="502" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_114azx4_di" bpmnElement="Event_114azx4">
+        <dc:Bounds x="502" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0u6jvlw_di" bpmnElement="Activity_1vhhtee">
+        <dc:Bounds x="310" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

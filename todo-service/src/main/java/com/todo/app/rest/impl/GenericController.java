@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-public class GenericController<T extends GenericService, S> {
+public abstract class GenericController<T extends GenericService, S> {
     final T service;
 
     public GenericController(T service) {
@@ -24,4 +24,5 @@ public class GenericController<T extends GenericService, S> {
     public ResponseEntity<Page<S>> getTodos(@PathVariable() int itemsPerPage, @PathVariable() int pageNo) {
         return ResponseEntity.ok(service.getByPage(pageNo, itemsPerPage));
     }
+
 }
